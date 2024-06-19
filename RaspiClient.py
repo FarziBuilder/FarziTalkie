@@ -15,7 +15,7 @@ host = "13.201.120.248"  # or "211.255.212.196"
 port = 5000
 
 # Hard-coded values
-own_value = "client1"
+own_value = "client1" #RPI 1
 pair_value = "client2"
 
 connected = False
@@ -75,7 +75,7 @@ def receive():
             break
 
 t1 = threading.Thread(target=send)
-t2 = threading.room(target=receive)
+t2 = threading.Thread(target=receive)  # Corrected this line
 
 t1.start()
 t2.start()
@@ -86,7 +86,7 @@ t2.join()
 input_stream.stop_stream()
 input_stream.close()
 output_stream.stop_stream()
-output_kStream.close()
+output_stream.close()
 p.terminate()
 
 GPIO.cleanup()
