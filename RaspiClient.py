@@ -5,9 +5,9 @@ import RPi.GPIO as GPIO
 import time
 
 # Setup GPIO for button
-GPIO.setmode(GPIO.BCM)
-button_pin = 2
-GPIO.setup(button_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+#GPIO.setmode(GPIO.BCM)
+#button_pin = 2
+#GPIO.setup(button_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 client = socket.socket()
 
@@ -51,8 +51,8 @@ output_stream = p.open(format=Format,
 def send():
     while True:
         try:
-            button_state = GPIO.input(button_pin)
-            if button_state == GPIO.LOW:  # Button is pressed
+            #button_state = GPIO.input(button_pin)
+            if True: #button_state == GPIO.LOW:  # Button is pressed
                 data = input_stream.read(Chunks, exception_on_overflow=False)
                 client.send(data)
             else:
