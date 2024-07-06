@@ -11,7 +11,7 @@ import time
 
 client = socket.socket()
 
-host = "13.201.120.248"  # or "211.255.212.196"
+host = "34.126.215.105"  # or "211.255.212.196"
 port = 5000
 
 # Hard-coded values
